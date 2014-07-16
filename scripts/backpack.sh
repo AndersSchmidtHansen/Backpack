@@ -1,5 +1,2 @@
 #!/usr/bin/env bash
-sudo gem install sass
-sudo apt-get install mongodb
-yes
-EOF
+sudo gem install sass && sudo apt-get --yes --force-yes install mongodb
