@@ -17,7 +17,7 @@ newSidequestProject(){
 
   # Replace default project name with the one defined by
   # the user.
-  sed -i "s/sidequest.app/$PROJECT_NAME.app/g" gulpfile.js;
+  sed -i "s/sidequest.app/$PROJECT_NAME.app/g" gulpfile.coffee;
   sed -i "s/sidequest.app/$PROJECT_NAME.app/g" .env.local.php;
   sed -i "s/Sidequest/$1/g" .env.local.php;
 
@@ -33,3 +33,9 @@ newSidequestProject(){
   gulp;
 }
 alias sidequest=newSidequestProject;
+
+initializeSidequest() {
+  find . -name 'Homestead.yaml' -exec sh -c "echo '\n sites:' >> {}" \;
+}
+
+alias sidequest:init=initializeSidequest;
